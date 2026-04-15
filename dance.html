@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dance Event</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dance Competition</h1>
+            <p>Feel the rhythm. Express the emotion. Own the stage</p>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+   <section class="section split reveal">
+    <img src="./images/p2.jpg">
+
+    <div>
+        <h2>About Event</h2>
+
+        <p class="about-text">
+            Dance Competition is a fun and energetic event where dancers show their talent in styles like classical, folk, freestyle, and contemporary. Participants can perform solo or in groups and showcase creativity and choreography.
+
+Judges will score based on creativity, coordination, stage presence, and overall performance. Winners will get prizes and recognition.
+
+Overall, it’s an exciting platform for dancers and a great entertainment experience for the audience.
+        </p>
+    </div>
+</section>
+    <!-- CATEGORIES -->
+    <section class="section">
+        <h2>Dance Categories</h2>
+
+        <div class="grid">
+
+            <div class="card ">
+                <img src="./images/p3.jpg">
+                <h3>Classical</h3>
+                <p>Traditional styles like Bharatanatyam focusing on grace and expressions.</p>
+            </div>
+
+            <div class="card ">
+                <img src="./images/p4.jpg">
+                <h3>Western</h3>
+                <p>Modern dance forms like freestyle, jazz, and contemporary.</p>
+            </div>
+
+            <div class="card ">
+                <img src="./images/p5.jpg">
+                <h3>Hip-Hop</h3>
+                <p>Energetic street-style dance with powerful movements.</p>
+            </div>
+
+            <div class="card ">
+                <img src="./images/p9.jpg">
+                <h3>Freestyle</h3>
+                <p>Creative dance with no limits—express your own style.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RULES -->
+    <section class="section split">
+        <img src="./images/p6.jpg">
+
+        <div>
+            <h2>Rules & Guidelines</h2>
+            <ul>
+                <li>Time limit: 3–5 minutes</li>
+                <li>Solo and group performances allowed</li>
+                <li>No inappropriate content</li>
+                <li>Music must be submitted prior to the event</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- JUDGING -->
+    <section class="section split reverse">
+        <img src="./images/p7.jpg">
+
+        <div>
+            <h2>Judging Criteria</h2>
+            <ul>
+                <li>Choreography & Creativity – 30%</li>
+                <li>Synchronization & Timing – 25%</li>
+                <li>Expressions & Stage Presence – 25%</li>
+                <li>Overall Impact – 20%</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="section split">
+        <img src="https://images.unsplash.com/photo-1503428593586-e225b39bddfe">
+
+        <div>
+            <h2>Event Schedule</h2>
+            <p><b>Date:</b> March 25, 2026</p>
+            <p><b>Time:</b> 10:00 AM – 2:00 PM</p>
+            <p><b>Venue:</b> Main Auditorium</p>
+        </div>
+    </section>
+
+    <!-- PRIZES -->
+   <!-- PRIZES -->
+<section class="section">
+    <h2>Prizes</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="./images/gold.jpg">
+            <h3>🥇 1st Prize</h3>
+            <p>₹3000 + Certificate</p>
+        </div>
+
+        <div class="card">
+            <img src="./images/silver.jpg">
+            <h3>🥈 2nd Prize</h3>
+            <p>₹2000 + Certificate</p>
+        </div>
+
+        <div class="card">
+            <img src="./images/bronze.jpg">
+            <h3>🥉 3rd Prize</h3>
+            <p>₹1000 + Certificate</p>
+        </div>
+
+        <div class="card">
+            <img src="./images/trophy.jpg">
+            <h3>🏆 Special Award</h3>
+            <p>Best Performer Trophy</p>
+        </div>
+
+    </div>
+</section>
+    <!-- REGISTER -->
+    <section class="section">
+        <h2>Register</h2>
+
+        <button onclick="showForm()">Register Now</button>
+
+        <div id="form" class="form">
+            <input type="text" placeholder="Your Name"><br>
+            <input type="email" placeholder="Your Email"><br>
+            <button onclick="submitForm()">Submit</button>
+        </div>
+    </section>
+
+    <!-- SCRIPT -->
+    <script>
+       function showForm() {
+    document.getElementById("form").style.display = "block";
+}
+
+function submitForm() {
+    alert("Registered Successfully 💃");
+}
+
+// NEW SCROLL ANIMATION CODE
+const cards = document.querySelectorAll(".card, .split, .section");
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+cards.forEach((card) => {
+    card.classList.add("reveal");
+    observer.observe(card);
+});
+
+
+    </script>
+
+</body>
+</html>
