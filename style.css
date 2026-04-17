@@ -246,10 +246,10 @@ body {
   object-fit: cover;
   transition: transform 0.4s ease;
 }
-<<<<<<< HEAD
+
 .card:hover img {
   transform: scale(1.1);
-=======
+}
 .card {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -257,7 +257,6 @@ body {
 .card:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 20px 50px rgba(128, 0, 128, 0.4);
->>>>>>> 3915f2a12fc754ddeb49cf1bef28457c23979602
 }
 .card h3 {
   color: purple;
@@ -438,7 +437,7 @@ button:hover {
   }
 }
 
-<<<<<<< HEAD
+
 @media screen and (max-width: 800px) {
 
     body{
@@ -447,8 +446,8 @@ button:hover {
     .nav__s2{
         display: none;
     }
-=======
-//STYLE FOR SINGING PAGE
+
+STYLE FOR SINGING PAGE
 
 .hero h1 {
     text-shadow: 
@@ -508,7 +507,6 @@ button:hover {
 .card:hover img {
     filter: brightness(1) contrast(1.1);
 }
->>>>>>> 3915f2a12fc754ddeb49cf1bef28457c23979602
 
     .nav__s3{
         display: block;
