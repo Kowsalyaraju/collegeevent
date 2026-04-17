@@ -87,6 +87,23 @@ body {
 .event img {
   width: 100%;
   height: 100%;
+  animation-name: zoom;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoom {
+
+  0%{
+    opacity: 0;
+    transform: translate(0);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(1);
+  }
+  
 }
 
 /* HIDE */
@@ -169,13 +186,30 @@ body {
   height: 100vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("./images/p1.jpg");
+    url("./images/p1.jpg"),url(./images/s1.jpg),url(./images/d1.jpg);
   background-size: cover;
   background-position: center;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  animation-name: zoom;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoom {
+
+  0%{
+    opacity: 0;
+    transform: translate(0);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(1);
+  }
+  
 }
 
 .hero-content {
