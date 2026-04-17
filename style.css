@@ -414,6 +414,81 @@ button:hover {
     0 0 20px gold,
     0 0 40px purple;
 }
+
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 60px 20px 20px;
+  margin-top:10%;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+.footer-section h2, .footer-section h3 {
+  margin-bottom: 15px;
+  color: #c94f4f;
+}
+.footer-section p, .footer-section a {
+  color: #ccc;
+  font-size: 14px;
+  text-decoration: none;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+/* hover effect */
+.footer-section a:hover {
+  color: #fff;
+  transition: 0.3s;
+}
+/* social icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+.social-icons a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+/* hover animation */
+.social-icons a:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+/* brand colors */
+.social-icons a:nth-child(1):hover { background: #E1306C; }
+.social-icons a:nth-child(2):hover { background: #0077B5; }
+.social-icons a:nth-child(3):hover { background: #1877F2; }
+.social-icons a:nth-child(4):hover { background: #000000; }
+/* bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #aaa;
+}
+
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
