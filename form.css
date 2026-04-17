@@ -19,6 +19,8 @@ body {
 	padding: 40px 20px;
 }
 
+
+
 .form-wrapper.glass-card {
 	width: 100%;
 	max-width: 800px;
@@ -247,6 +249,8 @@ body {
 	flex-wrap: wrap;
 	gap: 20px;
 }
+
+
 
 @media screen and (max-width: 600px) {
 	.flex-row {
