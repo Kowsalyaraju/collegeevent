@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drama Event</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero" style="background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url('./images/d1.jpg');background-size: cover;">
+        
+        <div class="hero-content">
+            <h1>Drama Competition</h1>
+            <p>Express stories. Live the characters. Own the stage 🎭</p>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section split reveal">
+        <img src="./images/d2.jpg">
+
+        <div>
+            <h2>About Event</h2>
+
+            <p class="about-text">
+                The Drama Competition is a creative platform where participants bring stories to life through acting, dialogue, and expressions. Teams can perform skits, mime, or theatrical plays based on social, emotional, or humorous themes.
+
+                Participants are judged on acting skills, script quality, coordination, and stage presence. This event encourages creativity, storytelling, and teamwork while entertaining the audience.
+            </p>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section">
+        <h2>Drama Categories</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <img src="./images/d3.jpg">
+                <h3>Stage Play</h3>
+                <p>Full-length dramatic performances with strong storytelling.</p>
+            </div>
+
+            <div class="card">
+                <img src="./images/d4.jpg">
+                <h3>Mime</h3>
+                <p>Express emotions and stories without using words.</p>
+            </div>
+
+            <div class="card">
+                <img src="./images/d5.jpg">
+                <h3>Street Play</h3>
+                <p>Social awareness dramas performed in an engaging style.</p>
+            </div>
+
+            <div class="card">
+                <img src="./images/d6.jpg">
+                <h3>Comedy Skit</h3>
+                <p>Short humorous performances to entertain the audience.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RULES -->
+    <section class="section split">
+        <img src="./images/p6.jpg">
+
+        <div>
+            <h2>Rules & Guidelines</h2>
+            <ul>
+                <li>Time limit: 5–10 minutes</li>
+                <li>Team participation only</li>
+                <li>No offensive or inappropriate content</li>
+                <li>Props must be arranged by participants</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- JUDGING -->
+    <section class="section split reverse">
+        <img src="./images/p7.jpg">
+
+        <div>
+            <h2>Judging Criteria</h2>
+            <ul>
+                <li>Acting & Expression – 30%</li>
+                <li>Story & Creativity – 25%</li>
+                <li>Coordination – 25%</li>
+                <li>Overall Impact – 20%</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="section split">
+        <img src="./images/d9.jpg">
+
+        <div>
+            <h2>Event Schedule</h2>
+            <p><b>Date:</b> March 27, 2026</p>
+            <p><b>Time:</b> 12:00 PM – 4:00 PM</p>
+            <p><b>Venue:</b> Main Auditorium</p>
+        </div>
+    </section>
+
+    <!-- PRIZES -->
+    <section class="section">
+        <h2>Prizes</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <img src="./images/gold.jpg">
+                <h3>🥇 1st Prize</h3>
+                <p>₹3000 + Certificate</p>
+            </div>
+
+            <div class="card">
+                <img src="./images/silver.jpg">
+                <h3>🥈 2nd Prize</h3>
+                <p>₹2000 + Certificate</p>
+            </div>
+
+            <div class="card">
+                <img src="./images/bronze.jpg">
+                <h3>🥉 3rd Prize</h3>
+                <p>₹1000 + Certificate</p>
+            </div>
+
+            <div class="card">
+                <img src="./images/trophy.jpg">
+                <h3>🏆 Special Award</h3>
+                <p>Best Actor Award</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- REGISTER -->
+    <section class="section">
+        <h2>Register</h2>
+
+        <button onclick="showForm()">Register Now</button>
+
+        <div id="form" class="form">
+            <input type="text" placeholder="Your Name"><br>
+            <input type="email" placeholder="Your Email"><br>
+            <button onclick="submitForm()">Submit</button>
+        </div>
+    </section>
+
+    <!-- SCRIPT -->
+    <script>
+        function showForm() {
+            document.getElementById("form").style.display = "block";
+        }
+
+        function submitForm() {
+            alert("Registered Successfully 🎭");
+        }
+
+        const cards = document.querySelectorAll(".card, .split, .section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                }
+            });
+        }, { threshold: 0.15 });
+
+        cards.forEach((card) => {
+            card.classList.add("reveal");
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>
