@@ -23,6 +23,15 @@ body {
   color: var(--text);
   line-height: 1.6
 }
+.section-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  text-align: center
+}
 
 img,
 button,
@@ -72,23 +81,26 @@ input:focus {
 }
 
 .section-label {
-  display: inline-flex;
+  display: block;
   margin-bottom: 16px;
   font-size: .78rem;
   letter-spacing: .24em;
   text-transform: uppercase;
-  color: var(--primary)
+  color: var(--primary);
+  text-align: center
 }
 
 .section h2 {
   margin: 0;
-  font-size: clamp(2rem, 3vw, 3.2rem)
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  text-align: center
 }
 
 .section p {
   margin: 18px auto 0;
   max-width: 640px;
-  color: var(--muted)
+  color: var(--muted);
+  text-align: center
 }
 
 .card-container {
