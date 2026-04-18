@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var cards = document.querySelectorAll(".card");
 
   cards.forEach(function (card) {
+<<<<<<< HEAD
     var title = card.querySelector("h3");
     var eventName = title ? title.textContent : "";
 
@@ -28,14 +29,76 @@ document.addEventListener("DOMContentLoaded", function () {
       eventKey = "talent";
     }
 
+=======
+
+    
+    var eventKey = card.getAttribute('data-event');
+>>>>>>> 7855b2533df485dc6c2d12bff4692c48a21d5d92
 
     var detailBtn = card.querySelector(".detail-btn");
     var registerBtn = card.querySelector(".register-btn");
 
     if (detailBtn) {
+<<<<<<< HEAD
       detailBtn.addEventListener("click", function () {
         if (eventKey) {
           window.location.href = eventKey + ".html";
+=======
+      detailBtn.onclick = function () {
+        if (eventKey) {
+          window.location.href = eventKey + ".html";
+        }
+      };
+    }
+
+  
+    if (registerBtn) {
+      registerBtn.onclick = function () {
+        window.location.href = "form.html?event=" + eventKey;
+      };
+    }
+
+  });
+
+});
+
+// heart button functionality
+let favorites = JSON.parse(localStorage.getItem("festFavorites"));
+
+if (favorites === null) {
+  favorites = [];
+}
+
+
+let buttons = document.querySelectorAll(".favorite");
+
+
+buttons.forEach(function(button) {
+
+
+  let eventName = button.nextElementSibling.textContent.trim();
+
+  
+  if (favorites.includes(eventName)) {
+    button.textContent = "❤️";
+  } else {
+    button.textContent = "🤍";
+  }
+
+  button.addEventListener("click", function(e) {
+
+    e.preventDefault();
+
+    
+    if (favorites.includes(eventName)) {
+
+      
+      let newList = [];
+
+      favorites.forEach(function(item) {
+        if (item !== eventName) {
+          newList.push(item);
+>>>>>>> 7855b2533df485dc6c2d12bff4692c48a21d5d92
         }
       });
     }
@@ -97,4 +160,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+<<<<<<< HEAD
 })
+=======
+
+
+
+
+>>>>>>> 7855b2533df485dc6c2d12bff4692c48a21d5d92
