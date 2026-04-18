@@ -18,6 +18,16 @@ document.addEventListener("DOMContentLoaded", function () {
     else if (eventName.toLowerCase().includes("drama")) {
       eventKey = "drama";
     }
+    else if (eventName.toLowerCase().includes("fashion")) {
+      eventKey = "fashion";
+    }
+    else if (eventName.toLowerCase().includes("band")) {
+      eventKey = "band";
+    }
+    else if (eventName.toLowerCase().includes("talent")) {
+      eventKey = "talent";
+    }
+
 
     var detailBtn = card.querySelector(".detail-btn");
     var registerBtn = card.querySelector(".register-btn");
