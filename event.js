@@ -1,58 +1,96 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ================= EVENTS =================
+// events
   var cards = document.querySelectorAll(".card");
 
+  
   cards.forEach(function (card) {
 
-    // Prefer data attribute (cleaner)
-    var eventKey = card.getAttribute("data-event");
+    
+    var eventKey = card.getAttribute('data-event');
 
+    
     var detailBtn = card.querySelector(".detail-btn");
     var registerBtn = card.querySelector(".register-btn");
 
+    
     if (detailBtn) {
-      detailBtn.addEventListener("click", function () {
+      detailBtn.onclick = function () {
         if (eventKey) {
           window.location.href = eventKey + ".html";
         }
-      });
+      };
     }
 
+  
     if (registerBtn) {
-      registerBtn.addEventListener("click", function () {
+      registerBtn.onclick = function () {
         window.location.href = "form.html?event=" + eventKey;
-      });
+      };
     }
+
   });
 
+});
 
-  // ================= FAVORITES =================
-  let favorites = JSON.parse(localStorage.getItem("festFavorites")) || [];
-  let buttons = document.querySelectorAll(".favorite");
+// heart button functionality
+let favorites = JSON.parse(localStorage.getItem("festFavorites"));
 
-  buttons.forEach(function(button) {
+if (favorites === null) {
+  favorites = [];
+}
 
-    let card = button.closest(".card");
-    let title = card ? card.querySelector("h3") : null;
-    let eventName = title ? title.textContent.trim() : "";
 
-    button.textContent = favorites.includes(eventName) ? "❤️" : "🤍";
+let buttons = document.querySelectorAll(".favorite");
 
-    button.addEventListener("click", function(e) {
-      e.preventDefault();
 
-      if (favorites.includes(eventName)) {
-        favorites = favorites.filter(item => item !== eventName);
-        button.textContent = "🤍";
-      } else {
-        favorites.push(eventName);
-        button.textContent = "❤️";
-      }
+buttons.forEach(function(button) {
 
-      localStorage.setItem("festFavorites", JSON.stringify(favorites));
-    });
+
+  let eventName = button.nextElementSibling.textContent.trim();
+
+  
+  if (favorites.includes(eventName)) {
+    button.textContent = "❤️";
+  } else {
+    button.textContent = "🤍";
+  }
+
+  button.addEventListener("click", function(e) {
+
+    e.preventDefault();
+
+    
+    if (favorites.includes(eventName)) {
+
+      
+      let newList = [];
+
+      favorites.forEach(function(item) {
+        if (item !== eventName) {
+          newList.push(item);
+        }
+      });
+
+      favorites = newList;
+      button.textContent = "🤍";
+
+    } else {
+
+      
+      favorites.push(eventName);
+      button.textContent = "❤️";
+    }
+
+    
+    localStorage.setItem("festFavorites", JSON.stringify(favorites));
+
   });
+
+});
+
 
 
   // ================= SIDENAV =================
@@ -74,10 +112,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  if (close2 && welcome) {
-    close2.addEventListener("click", function () {
-      welcome.classList.add("hidden");
-    });
-  }
 
-});
+
+
+})
+
