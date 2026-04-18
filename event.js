@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
 
@@ -7,21 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   cards.forEach(function (card) {
 
     
-    var title = card.querySelector("h3");
-    var eventName = title ? title.textContent : "";
-
-    var eventKey = "";
-
-  
-    if (eventName.toLowerCase().includes("dance")) {
-      eventKey = "dance";
-    } 
-    else if (eventName.toLowerCase().includes("singing")) {
-      eventKey = "singing";
-    } 
-    else if (eventName.toLowerCase().includes("drama")) {
-      eventKey = "drama";
-    }
+    var eventKey = card.getAttribute('data-event');
 
     
     var detailBtn = card.querySelector(".detail-btn");
@@ -30,12 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
     if (detailBtn) {
       detailBtn.onclick = function () {
-        if (eventKey === "dance") {
-          window.location.href = "dance.html";
-        } else if (eventKey === "singing") {
-          window.location.href = "singing.html";
-        } else if (eventKey === "drama") {
-          window.location.href = "drama.html";
+        if (eventKey) {
+          window.location.href = eventKey + ".html";
         }
       };
     }
@@ -43,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     if (registerBtn) {
       registerBtn.onclick = function () {
-        window.location.href = "form.html?event=" + eventName;
+        window.location.href = "form.html?event=" + eventKey;
       };
     }
 
@@ -106,6 +90,10 @@ buttons.forEach(function(button) {
   });
 
 });
+
+
+
+
 
 
 
