@@ -21,16 +21,31 @@ document.addEventListener("DOMContentLoaded", () => {
 	const renderMembers = (count) => {
 		membersContainer.innerHTML = "";
 
-		for (let i = 2; i <= count; i++) {
-			membersContainer.insertAdjacentHTML("beforeend", `
-				<div class="team-member">
-					<h4>Participant ${i}</h4>
-					<div class="input-group"><label>Name *</label><input type="text" placeholder="Enter name" required></div>
-					<div class="input-group"><label>Phone No *</label><input type="tel" placeholder="Enter phone number" required></div>
-					<div class="input-group"><label>Email Address *</label><input type="email" placeholder="Enter email address" required></div>
-				</div>
-			`);
-		}
+		membersContainer.innerHTML = "";
+
+for (let i = 2; i <= count; i++) {
+    membersContainer.insertAdjacentHTML("beforeend", `
+        <div class="team-member">
+            <h4>Participant ${i}</h4>
+            
+            <div class="input-group">
+                <label>Name *</label>
+                <input type="text" placeholder="Enter name" pattern="^[a-zA-Z\\s]+$" title="Only letters and spaces are allowed" required>
+            </div>
+            
+            <div class="input-group">
+                <label>Phone No *</label>
+                <input type="tel" placeholder="Enter phone number" pattern="\\d{10}" title="Please enter exactly 10 digits" required>
+            </div>
+            
+            <div class="input-group">
+                <label>Email Address *</label>
+                <input type="email" placeholder="Enter email address" required>
+            </div>
+        </div>
+    `);
+}
+
 	};
 
 	form.addEventListener("submit", (e) => {
