@@ -5,105 +5,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   cards.forEach(function (card) {
 
-    var title = card.querySelector("h3");
-    var eventName = title ? title.textContent : "";
-
-    var eventKey = "";
-
-    if (eventName.toLowerCase().includes("dance")) {
-      eventKey = "dance";
-    } 
-    else if (eventName.toLowerCase().includes("singing")) {
-      eventKey = "singing";
-    } 
-    else if (eventName.toLowerCase().includes("drama")) {
-      eventKey = "drama";
-    }
-    else if (eventName.toLowerCase().includes("fashion")) {
-      eventKey = "fashion";
-    }
-    else if (eventName.toLowerCase().includes("band")) {
-      eventKey = "band";
-    }
-    else if (eventName.toLowerCase().includes("talent")) {
-      eventKey = "talent";
-    }
-
-
-    
-    var eventKey = card.getAttribute('data-event');
-
+    // Prefer data attribute (cleaner)
+    var eventKey = card.getAttribute("data-event");
 
     var detailBtn = card.querySelector(".detail-btn");
     var registerBtn = card.querySelector(".register-btn");
 
     if (detailBtn) {
-
       detailBtn.addEventListener("click", function () {
         if (eventKey) {
           window.location.href = eventKey + ".html";
-
-      detailBtn.onclick = function () {
-        if (eventKey) {
-          window.location.href = eventKey + ".html";
-        }
-      };
-    }
-
-  
-    if (registerBtn) {
-      registerBtn.onclick = function () {
-        window.location.href = "form.html?event=" + eventKey;
-      };
-    }
-
-  });
-
-});
-
-// heart button functionality
-let favorites = JSON.parse(localStorage.getItem("festFavorites"));
-
-if (favorites === null) {
-  favorites = [];
-}
-
-
-let buttons = document.querySelectorAll(".favorite");
-
-
-buttons.forEach(function(button) {
-
-
-  let eventName = button.nextElementSibling.textContent.trim();
-
-  
-  if (favorites.includes(eventName)) {
-    button.textContent = "❤️";
-  } else {
-    button.textContent = "🤍";
-  }
-
-  button.addEventListener("click", function(e) {
-
-    e.preventDefault();
-
-    
-    if (favorites.includes(eventName)) {
-
-      
-      let newList = [];
-
-      favorites.forEach(function(item) {
-        if (item !== eventName) {
-          newList.push(item);
         }
       });
     }
 
     if (registerBtn) {
       registerBtn.addEventListener("click", function () {
-        window.location.href = "form.html?event=" + encodeURIComponent(eventName);
+        window.location.href = "form.html?event=" + eventKey;
       });
     }
   });
@@ -111,12 +29,12 @@ buttons.forEach(function(button) {
 
   // ================= FAVORITES =================
   let favorites = JSON.parse(localStorage.getItem("festFavorites")) || [];
-
   let buttons = document.querySelectorAll(".favorite");
 
   buttons.forEach(function(button) {
 
-    let title = button.parentElement.querySelector("h3");
+    let card = button.closest(".card");
+    let title = card ? card.querySelector("h3") : null;
     let eventName = title ? title.textContent.trim() : "";
 
     button.textContent = favorites.includes(eventName) ? "❤️" : "🤍";
@@ -156,12 +74,10 @@ buttons.forEach(function(button) {
     });
   }
 
+  if (close2 && welcome) {
+    close2.addEventListener("click", function () {
+      welcome.classList.add("hidden");
+    });
+  }
 
-
-
-})
-})
-
-
-
-
+});
